@@ -10,17 +10,17 @@ Recipe.destroy_all
 User.destroy_all 
 UserRecipe.destroy_all
 
-puts "creating users"
-5.times do
-    User.create(username: Faker::Name.first_name, password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
-end
+# puts "creating users"
+# 5.times do
+#     User.create(username: Faker::Name.first_name, password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
+# end
 
-puts "creating recipes"
-5.times do
-    Recipe.create(title: Faker::Food.dish)
-end
+# puts "creating recipes"
+# 5.times do
+#     Recipe.create(title: Faker::Food.dish)
+# end
 
-puts "creating user recipes"
-5.times do
-    UserRecipe.create(user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, saved: false, created: true, used: true)
-end
+# puts "creating user recipes"
+# 5.times do
+#     UserRecipe.create(user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, saved: false, created: true, used: true)
+# end
