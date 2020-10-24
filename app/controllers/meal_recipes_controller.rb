@@ -1,0 +1,19 @@
+class MealRecipesController < ApplicationController
+
+    def create
+        @meal_recipe = MealRecipe.create(meal_recipe_params)
+        render json: @meal_recipe 
+    end
+
+    def destroy
+        @meal_recipe = MealRecipe.find(params[:id])
+        @meal_recipe.destroy 
+    end
+
+    private
+
+    def meal_recipe_params
+        params.require(:meal_recipe).permit(:meal_id, :recipe_id)
+    end
+
+end

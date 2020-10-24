@@ -3,6 +3,8 @@ class User < ApplicationRecord
     validates :username, :email, :password, presence: true
     validates :username, :email, uniqueness: {case_sensitive: false}
 
+    has_many :calendars
+
     has_many :user_recipes
     has_many :recipes, through: :user_recipes
     has_many :saved_recipes, -> {where("user_recipes.saved = true")}, through: :user_recipes, source: :recipe

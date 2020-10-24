@@ -9,11 +9,26 @@
 Recipe.destroy_all
 User.destroy_all 
 UserRecipe.destroy_all
+Follow.destroy_all
+Meal.destroy_all
+
+## PERMANENT DO NOT DELETE ##
+
+puts "creating meals"
+Meal.create(meal_name: "Breakfast")
+Meal.create(meal_name: "Lunch")
+Meal.create(meal_name: "Dinner")
+
+## pretend seed data starts here ##
 
 # puts "creating users"
 # 5.times do
 #     User.create(username: Faker::Name.first_name, password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
 # end
+# puts "creating users"
+# rebecca = User.create(username: "rebecca", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
+# haley = User.create(username: "haley", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
+# amelia = User.create(username: "amelia", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
 
 # puts "creating recipes"
 # 5.times do
@@ -22,14 +37,14 @@ UserRecipe.destroy_all
 
 # puts "creating user recipes"
 # 5.times do
-#     UserRecipe.create(user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, saved: false, created: true, used: true)
+#     UserRecipe.create(user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, saved: true, created: true, used: true)
 # end
 
-rebecca = User.create(username: "rebecca", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
-haley = User.create(username: "haley", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
-amelia = User.create(username: "amelia", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
+# # rebecca = User.create(username: "rebecca", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
+# # haley = User.create(username: "haley", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
+# # amelia = User.create(username: "amelia", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
 
-amelia.follow("rebecca")
-haley.follow("rebecca")
-rebecca.follow("haley")
-rebecca.follow("amelia")
+# amelia.follow("rebecca")
+# haley.follow("rebecca")
+# rebecca.follow("haley")
+# rebecca.follow("amelia")
