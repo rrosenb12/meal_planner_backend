@@ -24,3 +24,12 @@ UserRecipe.destroy_all
 # 5.times do
 #     UserRecipe.create(user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, saved: false, created: true, used: true)
 # end
+
+rebecca = User.create(username: "rebecca", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
+haley = User.create(username: "haley", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
+amelia = User.create(username: "amelia", password: Faker::Code.ean, email: Faker::Commerce.promotion_code)
+
+amelia.follow("rebecca")
+haley.follow("rebecca")
+rebecca.follow("haley")
+rebecca.follow("amelia")
