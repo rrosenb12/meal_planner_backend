@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :calendars, only: [:index, :show]
   resources :user_recipes
   resources :recipes
-  resources :users, only: [:create]
+  resources :users, only: [:create, :index]
   resources :follows, only: [:create, :destroy]
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'

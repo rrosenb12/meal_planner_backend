@@ -1,9 +1,9 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :username, :email
 
-  def initialize(user_object)
-    @user = user_object 
-  end
+  # def initialize(user_object)
+  #   @user = user_object 
+  # end
 
   def to_serialized_json
     options = {
