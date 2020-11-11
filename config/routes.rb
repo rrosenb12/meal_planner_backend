@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :day_meals, only: [:index, :show]
   resources :meals, only: [:index, :show]
   resources :days, only: [:index, :show]
-  resources :calendars, only: [:index, :show]
+  resources :calendars, only: [:index, :show, :create]
   resources :user_recipes
   resources :recipes
   resources :users, only: [:create, :index]
