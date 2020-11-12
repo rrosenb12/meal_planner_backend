@@ -1,8 +1,10 @@
 class CreateDays < ActiveRecord::Migration[6.0]
   def change
     create_table :days do |t|
-      t.integer :calendar_id
-      t.string :day_of_the_week
+      t.integer :user_id
+      t.integer :year
+      t.integer :month
+      t.integer :day
 
       t.timestamps
     end

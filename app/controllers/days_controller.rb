@@ -1,12 +1,13 @@
 class DaysController < ApplicationController
-    # should just automatically go, shouldn't need to be fetched
-    def index
-        @days = Day.all 
-        render json: @days 
+
+    def create
+        @day = Day.create(day_params)
+        render json: @day
     end
 
-    def show
-        @day = Day.find(params[:id])
-        render json: @day
+    private
+
+    def day_params
+        params.require(:day).permit(:user_id, :year, :month, :day)
     end
 end

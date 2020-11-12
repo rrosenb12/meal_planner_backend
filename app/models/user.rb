@@ -3,7 +3,7 @@ class User < ApplicationRecord
     validates :username, :email, :password, presence: true
     validates :username, :email, uniqueness: {case_sensitive: false}
 
-    has_many :calendars
+    has_many :days
 
     has_many :user_recipes
     has_many :recipes, through: :user_recipes

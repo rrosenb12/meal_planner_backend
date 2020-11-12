@@ -5,11 +5,6 @@ class MealRecipesController < ApplicationController
         render json: @meal_recipe 
     end
 
-    def destroy
-        @meal_recipe = MealRecipe.find(params[:id])
-        @meal_recipe.destroy 
-    end
-
     private
 
     def meal_recipe_params

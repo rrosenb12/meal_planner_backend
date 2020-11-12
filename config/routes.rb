@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :meal_recipes
-  resources :day_meals, only: [:index, :show]
+  resources :meal_recipes, only: [:index, :show, :create]
+  resources :day_recipes, only: [:index, :show, :create]
   resources :meals, only: [:index, :show]
-  resources :days, only: [:index, :show]
-  resources :calendars, only: [:index, :show, :create]
+  resources :days, only: [:index, :show, :create]
+  resources :calendars, only: [:index, :show]
   resources :user_recipes
   resources :recipes
   resources :users, only: [:create, :index]

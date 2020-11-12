@@ -1,4 +1,4 @@
 class Calendar < ApplicationRecord
-    belongs_to :user
-    has_many :days
+    has_many :calendar_meals
+    has_many :meals, through: :calendar_meals
 end

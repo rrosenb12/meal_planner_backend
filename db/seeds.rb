@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Recipe.destroy_all
-User.destroy_all 
-UserRecipe.destroy_all
-Follow.destroy_all
-Meal.destroy_all
+# Recipe.destroy_all
+# User.destroy_all 
+# UserRecipe.destroy_all
+# Follow.destroy_all
+# Meal.destroy_all
 
 ## PERMANENT DO NOT DELETE ##
 
@@ -19,7 +19,13 @@ Meal.create(meal_name: "Breakfast")
 Meal.create(meal_name: "Lunch")
 Meal.create(meal_name: "Dinner")
 
+puts "creating calendars"
+(Date.today...Date.new(2022, 12, 31)).each do |d|
+    Calendar.create(year: d.year, month: d.month, day: d.day, day_of_week: d.wday)
+end
+
 ## pretend seed data starts here ##
+
 
 # puts "creating users"
 # 5.times do
