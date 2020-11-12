@@ -20,7 +20,7 @@ Meal.create(meal_name: "Lunch")
 Meal.create(meal_name: "Dinner")
 
 puts "creating calendars"
-(Date.today...Date.new(2022, 12, 31)).each do |d|
+(Date.new(2020, 11, 7)...Date.new(2022, 12, 31)).each do |d|
     Calendar.create(year: d.year, month: d.month, day: d.day, day_of_week: d.wday)
 end
 
